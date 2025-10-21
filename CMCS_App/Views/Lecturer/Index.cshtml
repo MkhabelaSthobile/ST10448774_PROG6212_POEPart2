@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CMCS_App.Models.Claim>
+
+@{
+    ViewData["Title"] = "My Claims";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <h2>My Claims</h2>
+            <a href="@Url.Action("Create")" class="btn btn-primary">Submit New Claim</a>
+        </div>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Claim ID</th>
+                    <th>Month</th>
+                    <th>Hours Worked</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                    <th>Submission Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var claim in Model)
+                {
+                    <tr>
+                        <td>@claim.ClaimID</td>
+                        <td>@claim.Month</td>
+                        <td>@claim.HoursWorked</td>
+                        <td>@claim.TotalAmount.ToString("C")</td>
+                        <td>
+                            <span class="badge @GetStatusBadgeClass(claim.Status)">@claim.Status</span>
+                        </td>
+                        <td>@claim.SubmissionDate.ToString("MMM dd, yyyy")</td>
+                        <td>
+                            <a href="@Url.Action("Details", new { id = claim.ClaimID })" class="btn btn-info btn-sm">View Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@functions {
+    public string GetStatusBadgeClass(string status)
+    {
+        return status.ToLower() switch
+        {
+            var s when s.Contains("approved") => "bg-success",
+            var s when s.Contains("rejected") => "bg-danger",
+            _ => "bg-warning"
+        };
+    }
+}

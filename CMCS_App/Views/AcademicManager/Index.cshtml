@@ -1,0 +1,48 @@
+﻿@model List<CMCS_App.Models.AcademicManager>
+
+@{
+    ViewData["Title"] = "Academic Manager Dashboard";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-danger">Academic Manager Dashboard</h2>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-danger text-white">
+            Final Claim Verification
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Claim ID</th>
+                        <th>Lecturer</th>
+                        <th>Coordinator Approval</th>
+                        <th>Final Decision</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Dr. Smith</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                        <td>
+                            <button class="btn btn-primary btn-sm">Verify</button>
+                            <button class="btn btn-danger btn-sm">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-secondary text-white">
+            Generate Reports
+        </div>
+        <div class="card-body">
+            <button class="btn btn-outline-primary">Generate Claims Summary</button>
+        </div>
+    </div>
+</div>

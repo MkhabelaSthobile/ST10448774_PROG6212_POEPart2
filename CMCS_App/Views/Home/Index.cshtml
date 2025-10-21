@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h2 class="welcome-heading">Welcome!</h2>
+
+<style>
+    .welcome-heading {
+        font-size: 56px;
+        text-align: center;
+        margin-top: 40px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>Contract Monthly Claim System</h2>
+        <p class="subtitle">Please log in to continue</p>
+
+        <form asp-action="Index" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required />
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: lightgrey;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Center container */
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        padding-top: 0;
+        box-sizing: border-box;
+    }
+
+    /* White login card */
+    .login-box {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        width: 400px;
+        text-align: center;
+    }
+
+        /* Title inside the box */
+        .login-box h2 {
+            margin-bottom: 10px;
+            color: #222;
+            font-weight: 600;
+        }
+
+    /* Subtitle */
+    .subtitle {
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    /* Form fields */
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    /* Button */
+    .btn-login {
+        margin-top: 15px;
+        background: #007bff; /* professional blue */
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        width: 100%;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .btn-login:hover {
+            background: #0056b3;
+        }
+
+    /* Welcome heading at top */
+    h2 {
+        color: grey;
+        font-size: 48px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+</style>

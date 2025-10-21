@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Programme Coordinator Dashboard";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-info">Programme Coordinator Dashboard</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            Pending Claims for Review
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Claim ID</th>
+                        <th>Lecturer</th>
+                        <th>Hours</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Dr. Smith</td>
+                        <td>12</td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Approve</button>
+                            <button class="btn btn-danger btn-sm">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Prof. Adams</td>
+                        <td>10</td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Approve</button>
+                            <button class="btn btn-danger btn-sm">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
